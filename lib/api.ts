@@ -1,5 +1,5 @@
 // Definicja typów dla produktów
-export interface Product {
+export type Product = {
   id: number;
   title: string;
   description: string;
@@ -13,7 +13,7 @@ export interface Product {
   images: string[];
 }
 
-export interface ProductsResponse {
+export type ProductsResponse ={
   products: Product[];
   total: number;
   skip: number; 
