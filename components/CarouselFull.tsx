@@ -11,7 +11,7 @@ import {
 import Image from "next/image"
 import type {Product} from '@/lib/api'
 import Link from "next/link"
-import { Eye, Heart } from "lucide-react"
+import { Eye, Heart, ShoppingCart } from "lucide-react"
 
  type ProductsProps={
   products: Product[]
@@ -28,8 +28,9 @@ const  CarouselFull = ({products}:ProductsProps)=> {
                 <CardContent className="relative flex flex-col aspect-square  p-2">
                   <div className="absolute top-1 left-2 bg-red-500 text-white px-4 py-1 rounded-sm">-20%</div>
                   <div className="absolute top-1 right-2 flex flex-col gap-4   px-2 py-1 rounded-sm">
-                   <Link href='/' className=''><Heart /></Link>
-                   <Link href='/' className=''><Eye /></Link>
+                   <Link href='/' className='hover:text-red-500'><Heart /></Link>
+                   <Link href='/' className='hover:text-blue-500'><Eye /></Link>
+                   <Link href='/' className='hover:text-green-500'><ShoppingCart /></Link>
                   </div>
                   <Image src={product.thumbnail || ''} alt={product.title ||""} width={200} height={200} />
                    <h1>{product.title}</h1>  
@@ -39,6 +40,7 @@ const  CarouselFull = ({products}:ProductsProps)=> {
 
                    </div>
                    <p>⭐⭐⭐⭐⭐ (88)</p>
+                   
                 </CardContent>
               </Card>
             </div>
