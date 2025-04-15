@@ -25,7 +25,7 @@ const Home = async () => {
           names={names}
         />
       </div>
-      <div className='w-full flex items-center flex-col gap-4 mt-8 pl-8'>
+      <div className='w-full flex  flex-col gap-4 mt-8 pl-8'>
        <PatternDiv label='Today&apos;s'/>
       <Timer endDate={saleEndDate} title="Flash Sale Ends In:" />
       <CarouselFull products={products}/>

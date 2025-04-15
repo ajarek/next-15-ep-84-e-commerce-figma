@@ -54,14 +54,14 @@ const MobileNav = () => {
           </Link>
 
           <Link
-            href='/shop'
+            href='/register'
             className={`  text-xl hover:text-primary focus:text-primary `}
-            aria-label='About Us'
+            aria-label='Sign up'
           >
            Sign Up
           </Link>
           <div className='relative flex items-center  w-[243px]'>
-          <Input className=' w-[243px] h-[38px] bg-secondary rounded-none text-[12px] focus-visible:ring-[3px]' placeholder='What are you looking for?'/>
+          <Input className=' w-[243px] h-[38px] bg-secondary rounded-sm text-[12px] focus-visible:ring-[3px]' placeholder='What are you looking for?'/>
              <Image src='/images/Vector.png' alt='Vector ' width={18} height={18} className='absolute top-1/2 translate-y-[-50%] right-2' />
           </div>
 

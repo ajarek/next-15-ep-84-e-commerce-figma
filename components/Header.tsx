@@ -14,7 +14,7 @@ const Header = () => {
             <Link href='/'>Home</Link>
             <Link href='/'>Contact</Link>
             <Link href='/'>About</Link>
-            <Link href='/'>Sign Up</Link>
+            <Link href='/register'>Sign Up</Link>
             <div className='relative flex items-center'>
           <Input className=' w-[243px] h-[38px] bg-secondary rounded-none text-[12px] focus-visible:ring-[3px]' placeholder='What are you looking for?'/>
              <Image src='/images/Vector.png' alt='Vector ' width={18} height={18} className='absolute top-1/2 translate-y-[-50%] right-2' />

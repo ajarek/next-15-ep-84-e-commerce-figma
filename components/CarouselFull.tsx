@@ -19,7 +19,8 @@ import { Eye, Heart, ShoppingCart } from "lucide-react"
 
 const  CarouselFull = ({products}:ProductsProps)=> {
   return (
-    <Carousel className="w-full max-w-5xl">
+    <div className='w-full  flex justify-center items-center flex-wrap  gap-4'>
+    <Carousel className="w-full max-w-5xl ">
       <CarouselContent className="">
         {products.map((product) => (
           <CarouselItem key={product.id} className="pl-1  basis-1/4 max-xl:basis-1/3 max-lg:basis-1/2 max-sm:basis-1/1">
@@ -50,6 +51,7 @@ const  CarouselFull = ({products}:ProductsProps)=> {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
+    </div>
   )
 }
 export default CarouselFull
