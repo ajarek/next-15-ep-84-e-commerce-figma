@@ -50,7 +50,7 @@ const Timer = ({ endDate, title = 'Sale Ends In:' }: TimerProps) => {
   }, [endDate])
 
   return (
-    <div className='w-full flex items-center gap-4 pl-10 '>
+    <div className='w-full flex flex-wrap items-center gap-4 pl-10 '>
       <h3 className='text-2xl font-semibold text-center mt-4'>{title}</h3>
       <div className='flex justify-center  gap-4'>
         <TimePanel

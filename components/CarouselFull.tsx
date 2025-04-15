@@ -20,9 +20,9 @@ import { Eye, Heart, ShoppingCart } from "lucide-react"
 const  CarouselFull = ({products}:ProductsProps)=> {
   return (
     <Carousel className="w-full max-w-5xl">
-      <CarouselContent className="-ml-1">
+      <CarouselContent className="">
         {products.map((product) => (
-          <CarouselItem key={product.id} className="pl-1  basis-1/4">
+          <CarouselItem key={product.id} className="pl-1  basis-1/4 max-xl:basis-1/3 max-lg:basis-1/2 max-sm:basis-1/1">
             <div className="p-1">
               <Card>
                 <CardContent className="relative flex flex-col aspect-square  p-2">

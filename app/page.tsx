@@ -17,7 +17,7 @@ const Home = async () => {
   return (
     <div className='w-full min-h-screen flex flex-col items-center justify-start px-4 py-8 gap-8'>
       <div className='w-full  flex  items-start justify-center gap-8 '>
-        <div className='w-[217px] h-[344]  flex justify-center  border-r border-input'>
+        <div className='w-[217px] h-[344]  flex justify-center  border-r border-input max-lg:hidden'>
           <SelectCategory query='lol'/>    
         </div>
         <Carousel
@@ -25,7 +25,7 @@ const Home = async () => {
           names={names}
         />
       </div>
-      <div className='w-full flex flex-col gap-4 mt-8 pl-8'>
+      <div className='w-full flex items-center flex-col gap-4 mt-8 pl-8'>
        <PatternDiv label='Today&apos;s'/>
       <Timer endDate={saleEndDate} title="Flash Sale Ends In:" />
       <CarouselFull products={products}/>
