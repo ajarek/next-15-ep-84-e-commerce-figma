@@ -13,7 +13,7 @@ import Image from 'next/image'
 
 const Logout = async ({ session }: { session: Session | null }) => {
   return (
-    <div className='flex flex-col gap-6  '>
+    <div className='w-full flex items-center gap-2 '>
       {session ? (
         <LogoutBtn />
       ) : (
@@ -42,7 +42,7 @@ const Logout = async ({ session }: { session: Session | null }) => {
       {session && (
         <>
           <Link
-            href='/my-courses'
+            href='/'
             className='bg-secondary w-8 h-8 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200 border-2 border-green-500 lg:hidden'
             aria-label='Moje kursy'
           >

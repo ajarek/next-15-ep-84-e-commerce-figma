@@ -28,13 +28,13 @@ const Signout = async () => {
           />
         </Link>
       </div>
-      <p>Jesteś pewien, że chcesz się wylogować?</p>
+      <p>Are you sure you want to log out?</p>
       <Button
         type='submit'
-        className='w-full bg-red-500 text-white hover:bg-red-600'
-        aria-label='Wyloguj się'
+        className='w-full bg-[#DB4444] text-white hover:bg-[#E07575]/90 rounded-[2px]'
+        aria-label='Log out'
       >
-        Wyloguj się
+        Log out
       </Button>
     </form>
   )

@@ -1,13 +1,16 @@
 import { signIn } from '@/app/api/auth/auth'
-import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
 import Link from 'next/link'
-import Image from 'next/image'
 import { redirect } from 'next/navigation'
 
 export function SignIn() {
   return (
+    <div className='w-full max-w-[375px] flex flex-col items-start  gap-4 p-4 '>
+      <div className=' flex flex-col items-start gap-2 p-6 '>
+      <h1 className='text-2xl '>Log in to Exclusive</h1>
+      <p>Enter your details below</p>
+      </div>
     <form
       action={async (formData) => {
         'use server'
@@ -22,57 +25,48 @@ export function SignIn() {
         } catch (error) {
           console.error(error)
         } finally {
-          redirect('/cryptoList')
+          redirect('/')
         }
       }}
-      className='p-4  flex flex-col items-center rounded-lg border-2 shadow-xl gap-4 min-w-[300px]'
+      className='w-[375px]  flex flex-col gap-4 p-6'
     >
-      <div className='flex justify-center p-2'>
-        <Link
-          href='/'
-          aria-label='Logo'
-        >
-          <Image
-            src='/images/user.png'
-            alt='logo'
-            width={60}
-            height={60}
-            className='w-full h-full object-cover  '
-          />
-        </Link>
-      </div>
-      <Label className='w-full'>
-        Imię
+    
+     
+        Name
         <Input
           name='username'
           type='text'
-          className='mt-2'
+          placeholder='Name'
+          className='rounded-none border-none border-b-2 border-black bg-transparent focus:outline-none focus:ring-0 focus:border-black'
           required
+          
         />
-      </Label>
-      <Label className='w-full'>
-        Hasło
+      
+     
+        Password
         <Input
           name='password'
           type='password'
-          className='mt-2'
+          placeholder='Password'
+          className='rounded-none border-none border-b-2 border-black bg-transparent focus:outline-none focus:ring-0 focus:border-black'
           required
         />
-      </Label>
+      
       <Button
         type='submit'
-        className='w-full bg-[#0E78F9] text-white hover:bg-[#0E78F9]/90'
-        aria-label='Zaloguj'
+       className='w-full bg-[#DB4444] text-white hover:bg-[#E07575]/90 rounded-[2px]'
+        aria-label='Log in'
       >
-        Zaloguj
+        Log in
       </Button>
       <Link
         href='/register'
-        className=''
-        aria-label='Nie masz konta? Zarejestruj się'
+        className='text-black'
+        aria-label='You don&apos;t have an account?'
       >
-        Nie masz konta? <b className='text-[#0E78F9]'>Zarejestruj się</b>
+       You don&apos;t have an account? <b className=' border-b'>Sign up</b>
       </Link>
     </form>
+    </div>
   )
 }

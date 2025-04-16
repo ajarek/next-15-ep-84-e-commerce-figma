@@ -15,7 +15,7 @@ const RegisterForm = () => {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [img, setImg] = useState('')
+  const [img, ] = useState('')
   const [isAdmin] = useState(DEFAULT_IS_ADMIN)
 
   const router = useRouter()
@@ -41,7 +41,7 @@ const RegisterForm = () => {
   return (
     <div className='w-full max-w-[375px] flex flex-col items-start  gap-4 p-4 '>
       <div className=' flex flex-col items-start gap-2 p-6 '>
-      <h1 className='text-2xl font-bold'>Create an account</h1>
+      <h1 className='text-2xl '>Create an account</h1>
       <p>Enter your details below</p>
       </div>
       <form
