@@ -26,11 +26,11 @@ const  CarouselFull = ({products}:ProductsProps)=> {
           <CarouselItem key={product.id} className="pl-1  basis-1/4 max-xl:basis-1/3 max-lg:basis-1/2 max-sm:basis-1/1">
             <div className="p-1">
               <Card>
-                <CardContent className="relative flex flex-col aspect-square  p-2">
+                <CardContent className="relative flex flex-col aspect-square  p-2 cursor-grab">
                   <div className="absolute top-1 left-2 bg-red-500 text-white px-4 py-1 rounded-sm">-20%</div>
                   <div className="absolute top-1 right-2 flex flex-col gap-4   px-2 py-1 rounded-sm">
                    <Link href='/' className='hover:text-red-500'><Heart /></Link>
-                   <Link href='/' className='hover:text-blue-500'><Eye /></Link>
+                   <Link href={`/productId?id=${product.id}`} className='hover:text-blue-500'><Eye /></Link>
                    <Link href='/' className='hover:text-green-500'><ShoppingCart /></Link>
                   </div>
                   <Image src={product.thumbnail || ''} alt={product.title ||""} width={200} height={200} />

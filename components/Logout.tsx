@@ -13,14 +13,34 @@ import Image from 'next/image'
 
 const Logout = async ({ session }: { session: Session | null }) => {
   return (
-    <div className='w-full flex items-center gap-2 '>
+    <div className=' flex items-center gap-2 '>
       {session ? (
+        <>
         <LogoutBtn />
+        <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger className=''>
+            <Image
+              src={session.user?.image || ''}
+              width={34}
+              height={34}
+              alt='user'
+              className='rounded-full'
+            />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p className='capitalize'>
+              {session.user?.name || 'User'}
+            </p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+      </>
       ) : (
         <Link
           href='/login'
-          className='bg-secondary w-8 h-8 rounded-full flex justify-center items-center hover:border-2 border-primary  transition-all delay-200 '
-          aria-label='Logowanie'
+          className=''
+          aria-label='Login'
         >
           <TooltipProvider>
             <Tooltip>
@@ -29,70 +49,17 @@ const Logout = async ({ session }: { session: Session | null }) => {
                 <KeyRound
                   size={24}
                   strokeWidth={1}
-                  aria-label='Logowanie'
+                  aria-label='Login'
                 />
               </TooltipTrigger>
               <TooltipContent>
-                <p>Logowanie</p>
+                <p>Login</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </Link>
       )}
-      {session && (
-        <>
-          <Link
-            href='/'
-            className='bg-secondary w-8 h-8 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200 border-2 border-green-500 lg:hidden'
-            aria-label='Moje kursy'
-          >
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger className='text-2xl'>
-                  <Image
-                    src={session.user?.image || ''}
-                    width={30}
-                    height={30}
-                    alt='user'
-                    className='rounded-full'
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className='capitalize'>
-                    {' '}
-                    {session.user?.name || 'Użytkownik'}
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </Link>
-          <Link
-            href='/'
-            className='bg-secondary w-8 h-8 rounded-full flex justify-center items-center secondary-foreground  transition-all delay-200 border-2 border-green-500 max-lg:hidden'
-            aria-label='Moje kursy'
-          >
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger className='text-xl'>
-                  <Image
-                    src={session.user?.image || ''}
-                    width={30}
-                    height={30}
-                    alt='user'
-                    className='rounded-full'
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className='capitalize'>
-                    {' '}
-                    {session.user?.name || 'Użytkownik'}
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </Link>
-        </>
-      )}
+      
     </div>
   )
 }

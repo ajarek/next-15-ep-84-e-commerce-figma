@@ -5,16 +5,23 @@ import Image from 'next/image'
 import MobileNav from './MobileNav'
 import Logout from './Logout'
 import { auth } from '@/app/api/auth/auth'
+import { Heart, ShoppingCart } from 'lucide-react'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 
 const Header = async () => {
   const session = await auth()
   return (
     <div className='w-full h-16 flex items-center justify-between border-b px-4'>
-      <div className=' h-[24px] flex items-center justify-between'>
-        <h1 className='w-[118px] text-[24px] text-[#00BA88] stroke-black stroke-2 font-bold '>
+      <div className='w-full  flex items-center justify-between'>
+        <h1 className=' text-xl text-[#00BA88] stroke-black stroke-2 font-bold '>
           Exclusive
         </h1>
-        <div className='w-[600px] h-[24px] text-[16px] flex items-center  justify-between max-lg:hidden '>
+        <div className=' text-lg flex items-center  justify-between gap-4  max-lg:hidden '>
           <Link href='/'>Home</Link>
           <Link href='/'>Contact</Link>
           <Link href='/'>About</Link>
@@ -33,28 +40,46 @@ const Header = async () => {
           </div>
         </div>
       </div>
-      <div className='w-[347px] h-[38px] flex items-center gap-4 px-4   '>
-        
-          <Link href='/heart'>
-            <Image
-              src='/images/heart.png'
-              alt='Vector '
-              width={22}
-              height={20}
-              className='  '
-            />
-          </Link>
-          <Link href='/cart'>
-            <Image
-              src='/images/cart.png'
-              alt='Vector '
-              width={24}
-              height={24}
-              className='  '
-            />
-          </Link>
-          <Logout session={session} />
-        
+      <div className='w-[260px] flex items-center justify-center gap-4  '>
+        <Link
+          href='/heart'
+          className=''
+        >
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger className=''>
+                <Heart
+                  size={24}
+                  strokeWidth={1}
+                  aria-label='heart'
+                />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p className='capitalize'>Like</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </Link>
+        <Link
+          href='/cart'
+          className=''
+        >
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger className=''>
+                <ShoppingCart
+                  size={24}
+                  strokeWidth={1}
+                  aria-label='Cart'
+                />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p className='capitalize'>Cart</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </Link>
+        <Logout session={session} />
       </div>
       <div className=' lg:hidden'>
         <MobileNav />
