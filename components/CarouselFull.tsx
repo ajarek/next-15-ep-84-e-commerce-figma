@@ -27,7 +27,7 @@ const  CarouselFull = ({products}:ProductsProps)=> {
             <div className="p-1">
               <Card>
                 <CardContent className="relative flex flex-col aspect-square  p-2 cursor-grab">
-                  <div className="absolute top-1 left-2 bg-red-500 text-white px-4 py-1 rounded-sm">-20%</div>
+                  <div className="absolute top-1 left-2 bg-red-500 text-white px-4 py-1 rounded-sm">-{product.discountPercentage}%</div>
                   <div className="absolute top-1 right-2 flex flex-col gap-4   px-2 py-1 rounded-sm">
                    <Link href='/' className='hover:text-red-500'><Heart /></Link>
                    <Link href={`/productId?id=${product.id}`} className='hover:text-blue-500'><Eye /></Link>
@@ -36,8 +36,8 @@ const  CarouselFull = ({products}:ProductsProps)=> {
                   <Image src={product.thumbnail || ''} alt={product.title ||""} width={200} height={200} />
                    <h1>{product.title}</h1>  
                    <div className="flex items center gap-4">
-                   <p className="text-red-500 font-semibold ">${(product.price*0.8).toFixed(2)}</p>
-                   <p className='line-through text-gray-700'>${product.price}</p>
+                   <p className="text-red-500 font-semibold ">${(product.price).toFixed(2)}</p>
+                   <p className='line-through text-gray-700'>${(product.price*(1+product.discountPercentage/100)).toFixed(2)}</p>
 
                    </div>
                    <p>⭐⭐⭐⭐⭐ (88)</p>
