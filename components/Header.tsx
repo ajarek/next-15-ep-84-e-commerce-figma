@@ -12,6 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import LengthCart from './LengthCart'
 
 const Header = async () => {
   const session = await auth()
@@ -67,11 +68,14 @@ const Header = async () => {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger className=''>
+                <div className='relative  '>
                 <ShoppingCart
                   size={24}
                   strokeWidth={1}
                   aria-label='Cart'
                 />
+               <LengthCart />
+                </div>
               </TooltipTrigger>
               <TooltipContent>
                 <p className='capitalize'>Cart</p>

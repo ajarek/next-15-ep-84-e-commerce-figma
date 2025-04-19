@@ -4,7 +4,7 @@ import { useCartStore } from '@/store/cartStore'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import type {Product} from '@/lib/api'
-
+import { toast } from "sonner"
 
 const ButtonAddCart = ({ product, quantity }: { product: Product; quantity: number }) => {
    const router = useRouter()
@@ -14,10 +14,7 @@ const ButtonAddCart = ({ product, quantity }: { product: Product; quantity: numb
             
             onClick={() => {
               if (items.some((i) => i.id === product?.id)) {
-                // toast({
-                //   variant: 'destructive',
-                //   title: 'Ta waluta jest już w Twoim koszyku',
-                // })
+                toast('This item is already in your cart')
                 router.push('/')
                 return
               }
@@ -30,7 +27,7 @@ const ButtonAddCart = ({ product, quantity }: { product: Product; quantity: numb
                 quantity: Number(quantity) || 1,
                
               })
-              router.push('/cryptoList')
+              router.push('/')
             }}
             aria-label='Add to cart'
             className='rounded-[2px] w-36 bg-[#DB4444] text-white hover:bg-[#E07575]/90'
