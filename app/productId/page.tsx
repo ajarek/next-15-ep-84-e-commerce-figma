@@ -36,7 +36,7 @@ const ProductId = ({searchParams}:{ searchParams: Promise<{ id: string;  quantit
          <p>{product?.description}</p>
          <div className='flex items-center gap-6'>
           <SelectQuantity query='quantity'/>
-          <ButtonAddCart quantity={+quantity} product={product} />
+          <ButtonAddCart quantity={+quantity} product={product} label='Add to cart' className='rounded-[2px] w-36 h-9 bg-[#DB4444] text-white hover:bg-[#E07575]/90' />
          </div>
          <div className='flex items-center gap-6 p-4 border border-gray-500'>
          <Truck size={48} strokeWidth={1} />

@@ -6,11 +6,11 @@ import { Button } from '@/components/ui/button'
 import type {Product} from '@/lib/api'
 import { toast } from "sonner"
 
-const ButtonAddCart = ({ product, quantity }: { product: Product; quantity: number }) => {
+const ButtonAddCart = ({ product, quantity, label, className }: { product: Product; quantity: number; label:string; className:string }) => {
    const router = useRouter()
    const { addItemToCart, items } = useCartStore()
   return (
-     <Button
+     <button
             
             onClick={() => {
               if (items.some((i) => i.id === product?.id)) {
@@ -27,13 +27,13 @@ const ButtonAddCart = ({ product, quantity }: { product: Product; quantity: numb
                 quantity: Number(quantity) || 1,
                
               })
-              router.push('/')
+              router.push('/cart')
             }}
             aria-label='Add to cart'
-            className='rounded-[2px] w-36 bg-[#DB4444] text-white hover:bg-[#E07575]/90'
+            className={className}
           >
-           Buy Now
-          </Button> 
+           {label}
+          </button> 
   )
 }
 
