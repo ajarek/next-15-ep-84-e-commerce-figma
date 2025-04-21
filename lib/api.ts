@@ -14,6 +14,7 @@ export type Product = {
 }
 
 export type ProductsResponse ={
+  map(arg0: (product: Product) => import("react").JSX.Element): import("react").ReactNode;
   products: Product[];
   total: number;
   skip: number; 

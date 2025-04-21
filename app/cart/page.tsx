@@ -90,7 +90,7 @@ const Cart = () => {
           </h1>
           <Button
             className='w-fit mx-auto bg-background text-foreground hover:bg-green-600 hover:text-background'
-            onClick={() => router.push('/')}
+            onClick={() => router.push('/products')}
             aria-label='go to products'
           >
             Return to products

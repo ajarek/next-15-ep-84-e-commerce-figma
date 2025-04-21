@@ -15,7 +15,7 @@ const ButtonAddCart = ({ product, quantity, label, className }: { product: Produ
             onClick={() => {
               if (items.some((i) => i.id === product?.id)) {
                 toast('This item is already in your cart')
-                router.push('/')
+                router.push('/products')
                 return
               }
               addItemToCart({
@@ -27,7 +27,7 @@ const ButtonAddCart = ({ product, quantity, label, className }: { product: Produ
                 quantity: Number(quantity) || 1,
                
               })
-              router.push('/cart')
+              router.push('/products')
             }}
             aria-label='Add to cart'
             className={className}

@@ -38,11 +38,11 @@ const MobileNav = () => {
             Home
           </Link>
           <Link
-            href='/contact'
+            href='/products'
             className={`  text-xl hover:text-primary focus:text-primary `}
             aria-label='Contact'
           >
-            Contact
+            Products
           </Link>
 
           <Link

@@ -27,7 +27,7 @@ const SelectCategory = ({ query }: SearchProps) => {
       params.delete(`${query}`)
     }
     try {
-      replace(`${pathname}?${params.toString()}`)
+      replace(`/productsSearch?${params.toString()}`)
     } catch (error) {
       console.error('Failed to replace URL parameters:', error)
     }

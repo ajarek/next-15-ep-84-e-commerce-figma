@@ -24,7 +24,7 @@ const Header = async () => {
         </h1>
         <div className=' text-lg flex items-center  justify-between gap-4  max-lg:hidden '>
           <Link href='/'>Home</Link>
-          <Link href='/'>Contact</Link>
+          <Link href='/products'>Products</Link>
           <Link href='/'>About</Link>
           <div className='relative flex items-center'>
             <Input
