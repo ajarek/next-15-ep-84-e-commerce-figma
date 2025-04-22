@@ -12,7 +12,7 @@ const Cart = () => {
   const router = useRouter()
 
   return (
-    <div className='min-h-[calc(100vh-64px)] container mx-auto px-8 py-16 bg-foreground text-background max-sm:px-1 '>
+    <div className='min-h-[calc(100vh-64px)] container mx-auto px-8 py-16  max-sm:px-1 '>
       {items.length > 0 ? (
         <>
           <div className=' w-full  max-h-[260px] overflow-y-auto scrollbar max-sm:max-h-[400px]  p-1 '>

@@ -46,7 +46,7 @@ const MobileNav = () => {
           </Link>
 
           <Link
-            href='/about-us'
+            href='/about'
             className={`  text-xl hover:text-primary focus:text-primary `}
             aria-label='Shop'
           >

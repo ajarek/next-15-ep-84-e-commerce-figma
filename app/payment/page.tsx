@@ -12,7 +12,7 @@ const Payment = async () => {
   }
 
   return (
-    <div className='min-h-[calc(100vh-64px)] flex flex-col justify-center bg-foreground text-background '>
+    <div className='min-h-[calc(100vh-64px)] flex flex-col justify-center'>
       <PaymentForm nameUser={user?.name || ''} />
     </div>
   )
