@@ -12,7 +12,7 @@ import { Truck } from 'lucide-react'
 const ProductId = ({searchParams}:{ searchParams: Promise<{ id: string;  quantity: string }>}) => {
 
   const { id, quantity } = use(searchParams)
-  const { products } = use (fetchProducts(42))
+  const { products } = use (fetchProducts(48))
   const product = products.find((product) => product.id === +id) as Product
   
  

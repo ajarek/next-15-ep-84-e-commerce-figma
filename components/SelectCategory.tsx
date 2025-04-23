@@ -72,10 +72,10 @@ const SelectCategory = ({ query }: SearchProps) => {
           Medicine <ChevronRight />
         </div>
         <div 
-          className={`px-2 py-1.5  flex items-center justify-between  text-sm rounded cursor-pointer hover:bg-accent hover:text-accent-foreground ${selectedValue === 'electronics' ? 'bg-accent text-accent-foreground' : ''}`}
-          onClick={() => handleSearch('electronics')}
+          className={`px-2 py-1.5  flex items-center justify-between  text-sm rounded cursor-pointer hover:bg-accent hover:text-accent-foreground ${selectedValue === 'home-decoration' ? 'bg-accent text-accent-foreground' : ''}`}
+          onClick={() => handleSearch('home-decoration')}
         >
-          Electronics <ChevronRight />
+          Home decoration <ChevronRight />
         </div>
         <div 
           className={`px-2 py-1.5  flex items-center justify-between  text-sm rounded cursor-pointer hover:bg-accent hover:text-accent-foreground ${selectedValue === 'sports' ? 'bg-accent text-accent-foreground' : ''}`}

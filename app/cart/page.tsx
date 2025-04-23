@@ -77,7 +77,7 @@ const Cart = () => {
             <Button
               onClick={() => router.push('/payment')}
               aria-label='go to payment'
-              className='bg-background text-foreground hover:bg-green-600 hover:text-background'
+              className='bg-green-600 hover:bg-green-500 '
             >
               I buy and pay
             </Button>

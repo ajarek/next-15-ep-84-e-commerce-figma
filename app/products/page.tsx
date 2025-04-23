@@ -5,16 +5,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ButtonAddCart from '@/components/ButtonAddCart'
 import LinksCategory from '@/components/LinksCategory'
-export const Products = async () => {
- const {products} = await fetchProducts(30) 
-
+export const Products = async ({ searchParams,}: {  searchParams: Promise<{name: string  }>}) => {
+ const {products} = await fetchProducts(48) 
+ const { name } = (await searchParams) || {}
   return (
     <div className='w-full min-h-screen flex flex-col items-center justify-start px-4 py-4 gap-4'>
       <h1 className='text-2xl font-semibold'>Select Categories</h1>
       <LinksCategory />
-      <h1 className='text-2xl font-semibold'>All Products</h1>
+      <h1 className='text-2xl font-semibold'>{name?'Products name: '+name :'All Products'}</h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
-      {products.map((product:Product) => (
+      {products
+      .filter(
+        (item) =>
+          item?.title.toUpperCase().includes(name?.toUpperCase()) || !name
+      )
+      .map((product:Product) => (
                <Card key={product.id}>
                <CardContent className='relative flex flex-col aspect-square  p-2 cursor-grab'>
                  <div className='absolute top-1 left-2 bg-red-500 text-white px-4 py-1 rounded-sm'>

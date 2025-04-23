@@ -38,7 +38,7 @@ const SelectQuantity = ({ query }: SearchProps) => {
     <div className='flex items-center '>
       <Button
         size={'icon'}
-        className='bg-transparent border border-gray-500 rounded-none text-black hover:bg-red-500 hover:text-white'
+        className=' border border-gray-500 rounded-none  hover:bg-red-500 hover:text-white'
         onClick={() => quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1) }
         aria-label='remove'
       >
@@ -47,7 +47,7 @@ const SelectQuantity = ({ query }: SearchProps) => {
       <div className='w-18 h-9 flex items-center justify-center border border-gray-500'>{quantity}</div>
       <Button
         size={'icon'}
-        className='bg-transparent border border-gray-500 rounded-none text-black hover:bg-green-500 hover:text-white'
+        className=' border border-gray-500 rounded-none  hover:bg-green-500 hover:text-white'
         onClick={() =>setQuantity(quantity + 1)
          
         }

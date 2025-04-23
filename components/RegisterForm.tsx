@@ -71,7 +71,7 @@ const RegisterForm = () => {
         />
         
         <Button
-          className='w-full bg-[#DB4444] text-white hover:bg-[#E07575]/90 rounded-[2px]'
+          className='w-full bg-[#DB4444] text-white hover:bg-[#E07575]/90 rounded-[2px] transition-all delay-200 cursor-pointer'
           type='submit'
           aria-label='Zarejestruj się'
         >
@@ -79,10 +79,10 @@ const RegisterForm = () => {
         </Button>
         <Link
           href='/login'
-          className='text-black'
+          className='space-x-2 '
           aria-label='Already have account?'
         >
-          Already have account? <b className=' border-b'>Log in</b>
+          Already have account? <b className=' border-b-2 hover:border-blue-500 transition-all delay-200'>Log in</b>
         </Link>
       </form>
     </div>

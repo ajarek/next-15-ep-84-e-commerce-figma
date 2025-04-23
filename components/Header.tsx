@@ -13,6 +13,8 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import LengthCart from './LengthCart'
+import { ModeToggle } from './ModeToggle'
+import SelectName from './SelectName'
 
 const Header = async () => {
   const session = await auth()
@@ -26,41 +28,12 @@ const Header = async () => {
           <Link href='/'>Home</Link>
           <Link href='/products'>Products</Link>
           <Link href='/about'>About</Link>
-          <div className='relative flex items-center'>
-            <Input
-              className=' w-[243px] h-[38px] bg-secondary rounded-none text-[12px] focus-visible:ring-[3px]'
-              placeholder='What are you looking for?'
-            />
-            <Image
-              src='/images/Vector.png'
-              alt='Vector '
-              width={18}
-              height={18}
-              className='absolute top-1/2 translate-y-[-50%] right-2'
-            />
-          </div>
+         <SelectName query='name'/>
         </div>
       </div>
-      <div className='w-[260px] flex items-center justify-center gap-4  '>
-        <Link
-          href='/heart'
-          className=''
-        >
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger className=''>
-                <Heart
-                  size={24}
-                  strokeWidth={1}
-                  aria-label='heart'
-                />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p className='capitalize'>Like</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </Link>
+      <div className='w-[280px] flex items-center justify-center gap-4  '>
+        <ModeToggle/>
+        
         <Link
           href='/cart'
           className=''
@@ -70,7 +43,7 @@ const Header = async () => {
               <TooltipTrigger className=''>
                 <div className='relative  '>
                 <ShoppingCart
-                  size={24}
+                  size={30}
                   strokeWidth={1}
                   aria-label='Cart'
                 />

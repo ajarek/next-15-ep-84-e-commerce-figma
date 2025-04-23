@@ -205,7 +205,7 @@ const FormPayment = ({ nameUser }: { nameUser: string }) => {
         <Button
           onClick={() => router.push('/')}
           aria-label='Produkty'
-          className='bg-background text-foreground hover:bg-green-600 hover:text-background'
+          className=' hover:bg-green-500 hover:white'
         >
           Items
         </Button>

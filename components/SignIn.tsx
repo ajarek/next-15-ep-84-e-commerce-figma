@@ -54,17 +54,17 @@ export function SignIn() {
       
       <Button
         type='submit'
-       className='w-full bg-[#DB4444] text-white hover:bg-[#E07575]/90 rounded-[2px]'
+       className='w-full bg-[#DB4444] text-white hover:bg-[#E07575]/90 rounded-[2px] transition-all delay-200'
         aria-label='Log in'
       >
         Log in
       </Button>
       <Link
         href='/register'
-        className='text-black'
+        className='space-x-2'
         aria-label='You don&apos;t have an account?'
       >
-       You don&apos;t have an account? <b className=' border-b'>Sign up</b>
+       You don&apos;t have an account? <b className=' border-b-2 hover:border-blue-500 transition-all delay-200'>Sign up</b>
       </Link>
     </form>
     </div>
