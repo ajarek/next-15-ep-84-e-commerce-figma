@@ -5,6 +5,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ButtonAddCart from '@/components/ButtonAddCart'
 import LinksCategory from '@/components/LinksCategory'
+import dynamic from 'next/dynamic'
+const SkeletonImage = dynamic(() => import('@/components/SkeletonImage'))
+
+
 export const Products = async ({ searchParams,}: {  searchParams: Promise<{name: string  }>}) => {
  const {products} = await fetchProducts(48) 
  const { name } = (await searchParams) || {}
@@ -25,7 +29,7 @@ export const Products = async ({ searchParams,}: {  searchParams: Promise<{name:
                  <div className='absolute top-1 left-2 bg-red-500 text-white px-4 py-1 rounded-sm'>
                    -{product.discountPercentage}%
                  </div>
-                 <div className='absolute top-1 right-2 flex flex-col gap-4   px-2 py-1 rounded-sm'>
+                 <div className='absolute top-1 right-2 flex flex-col gap-4   px-2 py-1 rounded-sm z-10'>
                    <Link
                      href='/'
                      className='text-2xl '
@@ -45,7 +49,7 @@ export const Products = async ({ searchParams,}: {  searchParams: Promise<{name:
                      className='cursor-pointer className=" text-2xl'
                    />
                  </div>
-                 <Image
+                 <SkeletonImage
                    src={product.thumbnail || ''}
                    alt={product.title || ''}
                    width={200}

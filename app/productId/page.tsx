@@ -1,13 +1,12 @@
 
-
+import dynamic from 'next/dynamic'
 import React ,{use} from 'react'
 import { fetchProducts } from '@/lib/api'
-import Image from 'next/image'
  import SelectQuantity from '@/components/SelectQuantity'
 import ButtonAddCart from '@/components/ButtonAddCart'
 import type { Product } from '@/lib/api'
 import { Truck } from 'lucide-react'
-
+const SkeletonImage = dynamic(() => import('@/components/SkeletonImage'))
 
 const ProductId = ({searchParams}:{ searchParams: Promise<{ id: string;  quantity: string }>}) => {
 
@@ -19,12 +18,15 @@ const ProductId = ({searchParams}:{ searchParams: Promise<{ id: string;  quantit
   return (
     <div className='w-full min-h-screen grid grid-cols-2 max-lg:grid-cols-1 gap-4 '>
       <div className=''>
-        <Image
+      
+        <SkeletonImage
           src={product?.thumbnail || ''} 
           width={500}
           height={500}
           alt={product?.title || ''}
-        />  
+          
+        />
+       
       </div>
       <div className='flex flex-col gap-6 p-4'>
         <h1 className='text-2xl font-semibold'>{product?.title}</h1>
