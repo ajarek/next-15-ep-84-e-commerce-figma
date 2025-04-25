@@ -4,8 +4,8 @@ import { Card, CardContent } from '@/components/ui/card'
 import Link from 'next/link'
 import ButtonAddCart from '@/components/ButtonAddCart'
 import LinksCategory from '@/components/LinksCategory'
-import dynamic from 'next/dynamic'
-const SkeletonImage = dynamic(() => import('@/components/SkeletonImage'))
+import SkeletonImage from '@/components/SkeletonImage'
+
 
 export const Products = async ({
   searchParams,
