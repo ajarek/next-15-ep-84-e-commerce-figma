@@ -7,11 +7,7 @@ import LinksCategory from '@/components/LinksCategory'
 import SkeletonImage from '@/components/SkeletonImage'
 
 
-export const Products = async ({
-  searchParams,
-}: {
-  searchParams: Promise<{ name: string }>
-}) => {
+export const Products = async ({ searchParams}: {searchParams: { name: string }}) => {
   const { products } = await fetchProducts(48)
   const { name } = (await searchParams) || {}
   return (
