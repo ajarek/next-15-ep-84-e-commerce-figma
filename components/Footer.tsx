@@ -42,6 +42,7 @@ const Footer = () => {
                   type='submit'
                   variant='ghost'
                   className='ml-2'
+                  aria-label='Subscribe'
                 >
                   <Send size={18} />
                 </Button>
