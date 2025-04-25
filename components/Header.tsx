@@ -41,7 +41,7 @@ const Header = async () => {
               <TooltipTrigger className=''>
                 <div className='relative  '>
                   <ShoppingCart
-                    size={30}
+                    size={26}
                     strokeWidth={1}
                     aria-label='Cart'
                   />

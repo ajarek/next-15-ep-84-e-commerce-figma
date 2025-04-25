@@ -32,11 +32,11 @@ const FormPayment = ({ nameUser }: { nameUser: string }) => {
   }
 
   return (
-    <div className=' w-full min-h-[calc(100vh-194px)]  flex flex-col justify-center max-sm:justify-start px-8 py-4 items-center  '>
+    <div className=' w-full min-h-screen  flex flex-col justify-center max-sm:justify-start px-8 max-sm:px-2 py-4 max-sm:py-2 items-center  '>
       {items.length > 0 ? (
         <form
           onSubmit={handleSubmit}
-          className=' w-full flex flex-col gap-4  p-4  rounded-lg border-2 border-gray-400  shadow-sm shadow-gray-400'
+          className=' w-full flex flex-col gap-4  p-4 max-sm:p-2  rounded-lg border-2 border-gray-400  shadow-sm shadow-gray-400'
         >
           <div className='grid grid-cols-2 max-lg:grid-cols-1 gap-4 max-lg:gap-2'>
             <div>

@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 const AboutPage = () => {
   return (
-    <div className='min-h-screen flex items-center justify-center  py-12 px-4 sm:px-6 lg:px-8'>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full  p-8 '>
+    <div className='min-h-screen flex items-center justify-center  py-12 px-4 max-sm:px-2 '>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full  p-8 max-sm:p-2 '>
         <div className='relative w-[400px] max-lg:w-full  h-[400px] max-lg:h-300px flex flex-col shadow-lg overflow-hidden  '>
           <Image
             src='/images/about.png'

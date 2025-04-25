@@ -12,14 +12,14 @@ const Cart = () => {
   const router = useRouter()
 
   return (
-    <div className='min-h-[calc(100vh-64px)] container mx-auto px-8 py-16  max-sm:px-1 '>
+    <div className='min-h-screen container mx-auto px-8 py-16  max-sm:px-1 '>
       {items.length > 0 ? (
         <>
-          <div className=' w-full  max-h-[260px] overflow-y-auto scrollbar max-sm:max-h-[400px]  p-1 '>
+          <div className=' w-full  '>
             {items.map((item) => (
               <div
                 key={item.id}
-                className='w-full grid grid-cols-6 max-sm:grid-cols-4 items-center justify-start  border-b border-gray-500 gap-4 p-4 '
+                className='w-full grid grid-cols-6 max-sm:grid-cols-4 items-center justify-start  border-b border-gray-500 gap-4 p-4 max-sm:px-1 '
               >
                 <div className='w-fit flex relative max-sm:hidden '>
                   <Image
@@ -87,7 +87,7 @@ const Cart = () => {
         <div className='flex flex-col gap-4'>
           <h1 className='text-2xl text-center py-8'>Your cart is empty!</h1>
           <Button
-            className='w-fit mx-auto bg-background text-foreground hover:bg-green-600 hover:text-background'
+            className='w-fit mx-auto  hover:bg-green-600  transition delay-200 '
             onClick={() => router.push('/products')}
             aria-label='go to products'
           >

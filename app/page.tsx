@@ -23,7 +23,7 @@ const Home = async () => {
           names={names}
         />
       </div>
-      <div className='w-full flex  flex-col gap-4 mt-8 pl-8'>
+      <div className='w-full flex  flex-col gap-4 mt-8 pl-8 max-sm:pl-0'>
         <PatternDiv label="Today's" />
         <Timer
           endDate={saleEndDate}
