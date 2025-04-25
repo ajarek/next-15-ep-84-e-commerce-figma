@@ -2,18 +2,18 @@ import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 
 export type Item = {
-  id: number;
-  title: string;
-  description?: string;
-  price: number;
-  discountPercentage: number;
-  rating?: number;
-  stock?: number;
-  brand?: string;
-  category?: string;
-  thumbnail?: string;
-  images?: string[];
-  quantity: number;
+  id: number
+  title: string
+  description?: string
+  price: number
+  discountPercentage: number
+  rating?: number
+  stock?: number
+  brand?: string
+  category?: string
+  thumbnail?: string
+  images?: string[]
+  quantity: number
 }
 
 type ItemState = {

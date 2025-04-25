@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react'
 interface CarouselProps {
   images: string[]
   autoSlideInterval?: number
-  names?: string[] // Dodany opcjonalny parametr name
+  names?: string[]
 }
 
 const Carousel = ({
@@ -18,7 +18,6 @@ const Carousel = ({
 }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // Automatyczne przesuwanie slajdów
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
@@ -27,7 +26,6 @@ const Carousel = ({
     return () => clearInterval(interval)
   }, [images.length, autoSlideInterval])
 
-  // Przejście do konkretnego slajdu
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
   }
@@ -43,7 +41,10 @@ const Carousel = ({
             <h2 className='absolute top-20 left-2 z-10  px-2 py-1  text-2xl text-white font-bold'>
               Up to 10% off Voucher
             </h2>
-            <Link href='/' className='absolute top-30 left-2 z-10 flex items-center gap-4 px-2 py-1  text-lg text-white font-semibold '>
+            <Link
+              href='/'
+              className='absolute top-30 left-2 z-10 flex items-center gap-4 px-2 py-1  text-lg text-white font-semibold '
+            >
               <span className='pb-1 border-b'>Shop Now</span> <ArrowRight />
             </Link>
             <div
@@ -64,7 +65,6 @@ const Carousel = ({
         ))}
       </div>
 
-      {/* Kropki nawigacyjne */}
       <div className='absolute bottom-4 left-0 right-0 flex justify-center space-x-2'>
         {images.map((_, index) => (
           <button

@@ -52,7 +52,7 @@ const FormPayment = ({ nameUser }: { nameUser: string }) => {
                   placeholder='Ethan Bennett'
                   required
                   pattern='^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+ [A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+$'
-                  title="Enter your name and surname"
+                  title='Enter your name and surname'
                 />
               </div>
               <div className='w-100% flex flex-col gap-2'>
@@ -73,7 +73,8 @@ const FormPayment = ({ nameUser }: { nameUser: string }) => {
                 <Label
                   htmlFor='street'
                   aria-label='street'
-                >Street and number
+                >
+                  Street and number
                 </Label>
                 <Input
                   type='text'
@@ -87,7 +88,7 @@ const FormPayment = ({ nameUser }: { nameUser: string }) => {
                   htmlFor='postcode'
                   aria-label='postcode'
                 >
-                 Postcode
+                  Postcode
                 </Label>
                 <Input
                   type='text'

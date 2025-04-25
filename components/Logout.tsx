@@ -16,26 +16,24 @@ const Logout = async ({ session }: { session: Session | null }) => {
     <div className=' flex items-center gap-2 '>
       {session ? (
         <>
-        <LogoutBtn />
-        <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger className=''>
-            <Image
-              src={session.user?.image || ''}
-              width={34}
-              height={34}
-              alt='user'
-              className='rounded-full'
-            />
-          </TooltipTrigger>
-          <TooltipContent>
-            <p className='capitalize'>
-              {session.user?.name || 'User'}
-            </p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      </>
+          <LogoutBtn />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger className=''>
+                <Image
+                  src={session.user?.image || ''}
+                  width={34}
+                  height={34}
+                  alt='user'
+                  className='rounded-full'
+                />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p className='capitalize'>{session.user?.name || 'User'}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </>
       ) : (
         <Link
           href='/login'
@@ -59,7 +57,6 @@ const Logout = async ({ session }: { session: Session | null }) => {
           </TooltipProvider>
         </Link>
       )}
-      
     </div>
   )
 }

@@ -13,7 +13,14 @@ const Payment = async () => {
 
   return (
     <div className='min-h-[calc(100vh-64px)] flex flex-col justify-center'>
-      <PaymentForm nameUser={user?.name || ''} />
+      <div className='container mx-auto px-4'>
+        <div className='bg-white rounded-lg shadow-md p-6 max-w-2xl mx-auto'>
+          <h1 className='text-2xl font-bold mb-6 text-center'>
+            Payment Details
+          </h1>
+          <PaymentForm nameUser={user?.name || ''} />
+        </div>
+      </div>
     </div>
   )
 }

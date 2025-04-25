@@ -4,26 +4,34 @@ import { Card, CardContent } from '@/components/ui/card'
 import Image from 'next/image'
 import Link from 'next/link'
 import ButtonAddCart from '@/components/ButtonAddCart'
-export const ProductsSearch = async ({searchParams}: {searchParams: {category: string}}) => {
-  const {category} = await searchParams || ''
+export const ProductsSearch = async ({
+  searchParams,
+}: {
+  searchParams: { category: string }
+}) => {
+  const { category } = (await searchParams) || ''
   const { products } = await fetchProductsByCategory(category)
-  if(products.length<=0){
-    return <div className='min-h-screen flex flex-col gap-4 '>
-    <h1 className='text-2xl text-red-500 text-center py-8'>
-    There are no items in this category
-    </h1>
-    <Link href={'/products'}
-      className='px-4 py-2 rounded-sm mx-auto bg-green-500 text-white hover:bg-green-600 hover:text-background'
-     
-      aria-label='go to products'
-    >
-      Return to products
-    </Link>
-  </div>
+  if (products.length <= 0) {
+    return (
+      <div className='min-h-screen flex flex-col gap-4 '>
+        <h1 className='text-2xl text-red-500 text-center py-8'>
+          There are no items in this category
+        </h1>
+        <Link
+          href={'/products'}
+          className='px-4 py-2 rounded-sm mx-auto bg-green-500 text-white hover:bg-green-600 hover:text-background'
+          aria-label='go to products'
+        >
+          Return to products
+        </Link>
+      </div>
+    )
   }
   return (
     <div className='w-full min-h-screen flex flex-col items-center justify-start px-4 py-4 gap-4'>
-      <h1 className='text-2xl font-semibold capitalize'>Category Products: {category?category:'No Category'}</h1>
+      <h1 className='text-2xl font-semibold capitalize'>
+        Category Products: {category ? category : 'No Category'}
+      </h1>
       <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4'>
         {products.map((product: Product) => (
           <Card key={product.id}>

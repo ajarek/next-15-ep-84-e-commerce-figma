@@ -1,11 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
-import { Input } from './ui/input'
-import Image from 'next/image'
 import MobileNav from './MobileNav'
 import Logout from './Logout'
 import { auth } from '@/app/api/auth/auth'
-import { Heart, ShoppingCart } from 'lucide-react'
+import { ShoppingCart } from 'lucide-react'
 import {
   Tooltip,
   TooltipContent,
@@ -28,12 +26,12 @@ const Header = async () => {
           <Link href='/'>Home</Link>
           <Link href='/products'>Products</Link>
           <Link href='/about'>About</Link>
-         <SelectName query='name'/>
+          <SelectName query='name' />
         </div>
       </div>
       <div className='w-[280px] flex items-center justify-center gap-4  '>
-        <ModeToggle/>
-        
+        <ModeToggle />
+
         <Link
           href='/cart'
           className=''
@@ -42,12 +40,12 @@ const Header = async () => {
             <Tooltip>
               <TooltipTrigger className=''>
                 <div className='relative  '>
-                <ShoppingCart
-                  size={30}
-                  strokeWidth={1}
-                  aria-label='Cart'
-                />
-               <LengthCart />
+                  <ShoppingCart
+                    size={30}
+                    strokeWidth={1}
+                    aria-label='Cart'
+                  />
+                  <LengthCart />
                 </div>
               </TooltipTrigger>
               <TooltipContent>

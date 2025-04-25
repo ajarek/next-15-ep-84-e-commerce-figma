@@ -32,6 +32,7 @@ const SelectQuantity = ({ query }: SearchProps) => {
     }
 
     handleQuantity(quantity.toString())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quantity])
 
   return (
@@ -39,21 +40,22 @@ const SelectQuantity = ({ query }: SearchProps) => {
       <Button
         size={'icon'}
         className=' border border-gray-500 rounded-none  hover:bg-red-500 hover:text-white'
-        onClick={() => quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1) }
+        onClick={() =>
+          quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1)
+        }
         aria-label='remove'
       >
         <Minus />
       </Button>
-      <div className='w-18 h-9 flex items-center justify-center border border-gray-500'>{quantity}</div>
+      <div className='w-18 h-9 flex items-center justify-center border border-gray-500'>
+        {quantity}
+      </div>
       <Button
         size={'icon'}
         className=' border border-gray-500 rounded-none  hover:bg-green-500 hover:text-white'
-        onClick={() =>setQuantity(quantity + 1)
-         
-        }
+        onClick={() => setQuantity(quantity + 1)}
         aria-label='add'
       >
-        
         <Plus />
       </Button>
     </div>

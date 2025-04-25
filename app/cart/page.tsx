@@ -85,9 +85,7 @@ const Cart = () => {
         </>
       ) : (
         <div className='flex flex-col gap-4'>
-          <h1 className='text-2xl text-center py-8'>
-          Your cart is empty!
-          </h1>
+          <h1 className='text-2xl text-center py-8'>Your cart is empty!</h1>
           <Button
             className='w-fit mx-auto bg-background text-foreground hover:bg-green-600 hover:text-background'
             onClick={() => router.push('/products')}

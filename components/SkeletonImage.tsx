@@ -13,19 +13,16 @@ type Props = {
   className?: string
 }
 
-const SkeletonImage=({
-  src,
-  alt,
-  width,
-  height,
-  className,
-}: Props)=> {
+const SkeletonImage = ({ src, alt, width, height, className }: Props) => {
   const [isLoading, setIsLoading] = useState(true)
 
   return (
-    <div className="relative" style={{ width, height }}>
+    <div
+      className='relative'
+      style={{ width, height }}
+    >
       {isLoading && (
-        <Skeleton className="absolute inset-0 w-full h-full rounded-xl" />
+        <Skeleton className='absolute inset-0 w-full h-full rounded-xl' />
       )}
       <Image
         src={src}

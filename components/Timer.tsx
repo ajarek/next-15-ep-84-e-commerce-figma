@@ -39,13 +39,13 @@ const Timer = ({ endDate, title = 'Sale Ends In:' }: TimerProps) => {
       setTimeLeft({ days, hours, minutes, seconds })
     }
 
-    // Calculate immediately
+    
     calculateTimeLeft()
 
-    // Update every second
+    
     const timer = setInterval(calculateTimeLeft, 1000)
 
-    // Clean up on unmount
+   
     return () => clearInterval(timer)
   }, [endDate])
 

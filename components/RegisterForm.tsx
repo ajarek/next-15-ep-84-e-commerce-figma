@@ -8,14 +8,13 @@ import Link from 'next/link'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 
-
 const DEFAULT_IS_ADMIN: boolean = false
 
 const RegisterForm = () => {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [img, ] = useState('')
+  const [img] = useState('')
   const [isAdmin] = useState(DEFAULT_IS_ADMIN)
 
   const router = useRouter()
@@ -41,8 +40,8 @@ const RegisterForm = () => {
   return (
     <div className='w-full max-w-[375px] flex flex-col items-start  gap-4 p-4 '>
       <div className=' flex flex-col items-start gap-2 p-6 '>
-      <h1 className='text-2xl '>Create an account</h1>
-      <p>Enter your details below</p>
+        <h1 className='text-2xl '>Create an account</h1>
+        <p>Enter your details below</p>
       </div>
       <form
         className='w-[375px]  flex flex-col gap-4 p-6  '
@@ -69,7 +68,7 @@ const RegisterForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           className='rounded-none border-none border-b-2 border-black bg-transparent focus:outline-none focus:ring-0 focus:border-black'
         />
-        
+
         <Button
           className='w-full bg-[#DB4444] text-white hover:bg-[#E07575]/90 rounded-[2px] transition-all delay-200 cursor-pointer'
           type='submit'
@@ -82,7 +81,10 @@ const RegisterForm = () => {
           className='space-x-2 '
           aria-label='Already have account?'
         >
-          Already have account? <b className=' border-b-2 hover:border-blue-500 transition-all delay-200'>Log in</b>
+          Already have account?{' '}
+          <b className=' border-b-2 hover:border-blue-500 transition-all delay-200'>
+            Log in
+          </b>
         </Link>
       </form>
     </div>

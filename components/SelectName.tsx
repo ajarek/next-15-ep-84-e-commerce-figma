@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Input } from './ui/input'
-import {  useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 interface SearchProps {
   query: string
@@ -11,7 +11,6 @@ interface SearchProps {
 const SelectName = ({ query }: SearchProps) => {
   const searchParams = useSearchParams()
   const { replace } = useRouter()
- 
 
   const handleSearch = (term: string) => {
     const params = new URLSearchParams(searchParams)
@@ -44,5 +43,3 @@ const SelectName = ({ query }: SearchProps) => {
 }
 
 export default SelectName
-
- 
