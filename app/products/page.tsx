@@ -4,10 +4,14 @@ import { Card, CardContent } from '@/components/ui/card'
 import Link from 'next/link'
 import ButtonAddCart from '@/components/ButtonAddCart'
 import LinksCategory from '@/components/LinksCategory'
-import SkeletonImage from '@/components/SkeletonImage'
+import dynamic from 'next/dynamic'
+const SkeletonImage = dynamic(() => import('@/components/SkeletonImage'))
 
-
-export const Products = async ({ searchParams}: {searchParams: { name: string }}) => {
+const Products = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ name: string }>
+}) => {
   const { products } = await fetchProducts(48)
   const { name } = (await searchParams) || {}
   return (
