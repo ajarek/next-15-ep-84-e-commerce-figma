@@ -5,11 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ButtonAddCart from '@/components/ButtonAddCart'
 
-const ProductsSearch = async ({
-  searchParams,
-}: {
-  searchParams: { category: string }
-}) => {
+const ProductsSearch = async ({searchParams,}: { searchParams: Promise<{ category: string }>}) => {
   const { category } = (await searchParams) || ''
   const { products } = await fetchProductsByCategory(category)
   if (products.length <= 0) {
